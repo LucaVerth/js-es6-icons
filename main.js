@@ -119,14 +119,12 @@ printAllCards();
 
 function printAllCards() {
 
-  container.innerHTML = '';
-
   icons.forEach((icon) => {
     container.innerHTML += 
     `
       <div class="box">
-        <div class="fontIcons"><i class="${icon.family} ${icon.prefix}${icon.name}"></i></div>
-        <div class="font-text">${icon.name}</div>
+        <div class="fontIcons ${icon.color}"><i class="${icon.family} ${icon.prefix}${icon.name}"></i></div>
+        <div class="font-text fw-bold">${icon.name}</div>
       </div>
 
     `
