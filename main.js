@@ -114,16 +114,42 @@ const icons = [
 ];
 
 const container = document.querySelector(".card-container");
+const el = document.getElementById('select-menu');
 
-printAllCards();
+el.addEventListener('change', (event) => {
+  let type = event.target.value;
+  cardSelect(type);
+})
 
-function printAllCards() {
-  icons.forEach((icon) => {
-    container.innerHTML += `
-      <div class="box">
-        <div class="fontIcons ${icon.color}"><i class="${icon.family} ${icon.prefix}${icon.name}"></i></div>
-        <div class="font-text fw-bold">${icon.name}</div>
-      </div>
-    `;
-  });
+const animalIcons = icons.filter((icons) => icons.type === 'animal')
+const vegetableIcons = icons.filter((icons) => icons.type === 'vegetable')
+const userIcons = icons.filter((icons) => icons.type === 'user')
+
+function cardSelect(type){
+  if(type == 4){
+    printAllCards(userIcons)
+  }else if(type == 3){
+    printAllCards(vegetableIcons)
+  }else if(type == 2){
+    printAllCards(animalIcons)
+  }else{
+    printAllCards(icons)
+  }
 }
+
+function printAllCards(cardsArray) {
+  container.innerHTML = '';
+  cardsArray.forEach((icons) => {
+    container.innerHTML += `
+    <div class="box">
+      <div class="fontIcons ${icons.color}"><i class="${icons.family} ${icons.prefix}${icons.name}"></i></div>
+      <div class="font-text fw-bold">${icons.name}</div>
+    </div>
+  `;
+  })
+}
+
+
+
+
+
