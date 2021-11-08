@@ -1,0 +1,47 @@
+body{
+  font-family: 'Rubik', sans-serif;
+  background-color: rgb(204, 198, 198);
+}
+
+.custom-font{
+  font-family: 'Acme', sans-serif;
+  color: #29B1DD;
+}
+
+.lv_row-top,
+.lv_row-bottom{
+  height: 60px;
+}
+.lv_row-top{
+  background-color: #fff;
+}
+.lv_row-bottom{
+  background-color: #29B1DD;
+  margin-bottom: 20px;
+}
+
+.card-container{
+  /* height: calc(100vh - 120px); */
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box{
+  width: calc((100% / 5) - 100px);
+  background-color: #fff; 
+  border-radius: 6px;
+  box-shadow: 0 2px 5px #000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: 35px 20px;
+}
+
+.fontIcons > i{
+  font-size: 40px;
+}
+
