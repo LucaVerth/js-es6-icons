@@ -116,6 +116,8 @@ const icons = [
 const container = document.querySelector(".card-container");
 const el = document.getElementById('select-menu');
 
+cardSelect();
+
 el.addEventListener('change', (event) => {
   let type = event.target.value;
   cardSelect(type);
